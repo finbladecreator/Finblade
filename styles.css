@@ -530,6 +530,20 @@ body {
     line-height: 1.8;
 }
 
+.footer-contact {
+    margin-top: 1rem !important;
+}
+
+.footer-contact a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: var(--accent);
+}
+
 .footer-links {
     display: flex;
     flex-direction: column;
