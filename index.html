@@ -13,7 +13,8 @@
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;html lang="en"&gt;&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">// FinBlade官网代码</span></p>
+<p class="p1"><span class="s1">const htmlContent = `&lt;html lang="en"&gt;&lt;head&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;FinBlade | Premium Saltwater Fillet Knives&lt;/title&gt;</span></p>
@@ -316,6 +317,19 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;&lt;/html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;&lt;/html&gt;`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// 创建下载链接</span></p>
+<p class="p1"><span class="s1">const blob = new Blob([htmlContent], { type: 'text/html' });</span></p>
+<p class="p1"><span class="s1">const url = URL.createObjectURL(blob);</span></p>
+<p class="p1"><span class="s1">const a = document.createElement('a');</span></p>
+<p class="p1"><span class="s1">a.href = url;</span></p>
+<p class="p1"><span class="s1">a.download = 'index.html'; // 文件名固定为index.html</span></p>
+<p class="p1"><span class="s1">document.body.appendChild(a);</span></p>
+<p class="p1"><span class="s1">a.click();</span></p>
+<p class="p1"><span class="s1">document.body.removeChild(a);</span></p>
+<p class="p1"><span class="s1">URL.revokeObjectURL(url);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">alert('文件已下载！请到浏览器下载文件夹查看 index.html 文件');</span></p>
 </body>
 </html>
